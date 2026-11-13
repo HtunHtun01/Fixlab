@@ -1,48 +1,41 @@
-# FIXLAB — Phone Repair Shop Simulator 3D (V2.0)
+# FIXLAB Phone Repair Shop Simulator V3.0
 
-A mobile-friendly, browser-based phone repair shop management game. It includes an isometric-style shop scene, customer queue, repair task mini-game, inventory, upgrades, staff hiring, XP/levels, daily challenge, view controls, and browser save.
+A mobile-friendly 3D shop-management game using HTML, CSS, JavaScript and Three.js.
 
-## Files
-- `index.html` — app layout
-- `style.css` — responsive interface and isometric-style shop
-- `game.js` — game rules and local save system
-- `README.md` — this guide
-- `LICENSE.txt` — MIT license
+## Features
+- Real Three.js 3D shop scene (not a CSS-only isometric mockup)
+- Drag to rotate; mouse wheel to zoom
+- Customer queue and phone repair orders
+- Step-based repair mini-game
+- Screen, battery and charging-port stock
+- Cash, levels, reputation, daily bonuses
+- Shop upgrades, assistant hiring and browser auto-save
+- Responsive phone and desktop UI
 
 ## Run locally
-1. Extract the ZIP.
-2. Open `index.html` in Chrome, Edge, Firefox, or Safari.
-3. Tap **Call next customer**.
-4. Open **Repair desk**, finish the repair steps in order, and complete the job.
-5. Buy parts in **Parts inventory** when stock runs out.
-6. Use upgrades and staff hiring to grow the shop.
+The game uses JavaScript ES modules. Do not open `index.html` directly with `file://`.
 
-No npm, build process, or backend is required. Internet is only used for optional Google Fonts; the game itself runs locally.
+Run a local server in this folder:
+```bash
+python -m http.server 8000
+```
+Open `http://localhost:8000`.
 
-## Publish to GitHub Pages
-1. Create a repository, for example `phone-repair-shop-simulator`.
-2. Upload `index.html`, `style.css`, `game.js`, `README.md`, and `LICENSE.txt` to the repository root.
-3. Open **Settings → Pages**.
-4. Choose **Deploy from a branch**, select `main` and `/(root)`, then Save.
-5. Wait for deployment. Your URL will be `https://YOUR-USERNAME.github.io/phone-repair-shop-simulator/`.
+Alternatively use VS Code Live Server.
 
-For a user-site repository named `YOUR-USERNAME.github.io`, the URL is `https://YOUR-USERNAME.github.io/`.
+## GitHub Pages
+1. Create a GitHub repository.
+2. Upload all four project files to the repository root.
+3. Open Settings → Pages.
+4. Select Deploy from a branch, choose `main` and `/ (root)`, then Save.
+5. Visit the published Pages URL.
 
-## Controls and systems
-- Call next customer: generate a random repair job.
-- Repair desk / tap shop scene: open an active repair.
-- Repair tasks: tap each task in order, then complete the job.
-- Parts inventory: buy screen, battery, port, speaker, camera, and tool kit stock.
-- Shop upgrades: unlock shop tiers and a repair-income bonus.
-- Staff room: hire a technician for a one-time fee and daily wage.
-- Daily challenge: complete two repairs and claim $100.
-- Rotate view / zoom: adjust the scene presentation.
-- Language: switch English / Myanmar interface label.
-- Save: saves locally; Reset starts a new game.
-- Double-click the Day number: close the day when no repair orders are pending.
+## Requirements and notes
+- Internet connection required: Three.js and Google Fonts are loaded from CDNs.
+- Modern browser with WebGL support required.
+- Progress is stored in localStorage on the current browser/device; it does not sync.
+- This is a game prototype, not a real electronics repair guide. Repair steps are fictional gameplay tasks.
+- Some menu items and advanced simulation systems are planned for later updates.
 
-## Save data
-Progress is stored in the browser's `localStorage` on the current device and browser. It does not automatically sync across devices. Clearing site data or using private browsing can remove the save.
-
-## Important
-This is a fictional game simulation. Repair tasks are abstract game actions and are not real-world device repair instructions. The shop scene uses CSS perspective and layered artwork rather than a full 3D engine.
+## Controls
+Drag scene to rotate; mouse wheel to zoom. Accept an order, advance each repair step, restock parts, upgrade the shop, and end the day.
