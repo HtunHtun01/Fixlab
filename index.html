@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1320"><meta name="description" content="FIXLAB Phone Repair Shop Simulator V2">
+<title>FIXLAB — Phone Repair Shop Simulator V2</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><div class="logo">🔧</div><div><b>FIX<span>LAB</span></b><small>PHONE REPAIR SIMULATOR <em>V2.0</em></small></div></div>
+  <div class="stats">
+    <div><small>WALLET</small><b id="money">$650</b></div><div><small>REPUTATION</small><b id="rep">★ 1.0</b></div>
+    <div><small>DAY</small><b id="day">01</b></div><div><small>LEVEL</small><b id="level">1</b></div>
+  </div>
+  <div class="tools"><button id="language">မြန်မာ</button><button id="sound" title="Sound">🔊</button><button id="save" title="Save">💾</button><button id="reset" title="Reset">↻</button></div>
+</header>
+<main class="main">
+<section class="left">
+  <div class="heading"><div><small class="kicker" data-t="workshop">YOUR WORKSHOP</small><h1 id="shopName">Downtown Repair Lab</h1></div><span class="open"><i></i><span data-t="open">SHOP OPEN</span></span></div>
+  <div class="scene-card">
+    <div class="scene" id="scene">
+      <div class="backwall"><div class="neon"><span>FIX</span>LAB<small>PHONE SERVICE CENTER</small></div><div class="shelf"><i>📦</i><i>🔋</i><i>📱</i><i>🧰</i></div><div class="clock">10:28</div><div class="window"><span>☀️</span></div></div>
+      <div class="floor">
+        <div class="tiles"></div>
+        <div class="desk reception"><div class="desk-top">🧾 <b>RECEPTION</b></div><div class="desk-face"></div></div>
+        <div class="desk repair"><div class="desk-top"><span>🪛　🔬　🔧</span><span class="phone">📱</span><span>💡</span></div><div class="desk-face"></div></div>
+        <div class="cabinet">📦<br>🔋<br>🧰</div><div class="plant">🪴</div>
+        <div class="avatar" id="avatar">🧑‍💼</div><div class="rug">FIXLAB</div>
+        <div class="zone z1">CUSTOMER AREA</div><div class="zone z2">REPAIR BENCH</div>
+      </div>
+      <div class="scene-hud"><span>📍 Downtown · <b id="sceneLevel">Level 1</b></span><span id="visitorCount">0 customers today</span></div>
+      <div class="scene-controls"><button id="rotate">⟳ Rotate view</button><button id="zoomIn">＋</button><button id="zoomOut">−</button></div>
+    </div>
+    <div class="scene-caption"><span>Tap a workstation to interact</span><span class="live"><i></i> LIVE SIMULATION</span></div>
+  </div>
+  <div class="quick">
+    <button class="quick-card" id="ordersBtn"><span>🛠️</span><div><b data-t="repairdesk">Repair desk</b><small>Open jobs & repair tasks</small></div><strong>›</strong></button>
+    <button class="quick-card" id="stockBtn"><span>📦</span><div><b data-t="inventory">Parts inventory</b><small>Buy components & supplies</small></div><strong>›</strong></button>
+    <button class="quick-card" id="upgradeBtn"><span>🏪</span><div><b data-t="upgrades">Shop upgrades</b><small>Expand your business</small></div><strong>›</strong></button>
+    <button class="quick-card" id="staffBtn"><span>🧑‍🔧</span><div><b data-t="staff">Staff room</b><small>Hire & manage technicians</small></div><strong>›</strong></button>
+  </div>
+</section>
+<aside class="right">
+  <section class="panel">
+    <div class="panel-title"><div><small class="kicker">WORK QUEUE</small><h2>Repair orders</h2></div><b class="counter" id="orderCount">0</b></div>
+    <div id="orders" class="orders"></div><button class="primary" id="newCustomer">＋ Call next customer</button>
+  </section>
+  <section class="panel">
+    <div class="panel-title"><div><small class="kicker">BUSINESS OVERVIEW</small><h2>Today's report</h2></div><span class="live">● LIVE</span></div>
+    <div class="metrics"><div><small>TODAY'S INCOME</small><b id="income">$0</b><em>↗ earned today</em></div><div><small>REPAIRS DONE</small><b id="done">0</b><em>✓ completed</em></div></div>
+    <div class="xp-head"><span>SHOP EXPERIENCE</span><b id="xpText">0 / 100 XP</b></div><div class="bar"><i id="xpBar"></i></div>
+    <div class="goal" id="goal">🎯 Next: earn 100 XP to level up.</div>
+  </section>
+  <section class="panel mini-panel"><div class="tip">💡</div><div><b>Workshop tip</b><p id="tip">Keep spare parts in stock. A repair needs the matching component.</p></div></section>
+  <section class="panel daily"><div class="panel-title"><div><small class="kicker">DAILY CHALLENGE</small><h2 id="challengeTitle">Complete 2 repairs</h2></div><span class="counter">🎯</span></div><div class="bar"><i id="challengeBar"></i></div><div class="challenge-foot"><span id="challengeProgress">0 / 2</span><b id="challengeReward">$100 reward</b></div><button class="secondary" id="claimChallenge" disabled>Claim reward</button></section>
+</aside>
+</main>
+<footer><span>FIXLAB SIMULATOR V2.0</span><span>Auto-save enabled · Browser local storage</span></footer>
+</div>
+<div class="overlay hidden" id="overlay"><div class="modal"><div class="modal-head"><div><small class="kicker" id="modalKicker">WORKSHOP</small><h2 id="modalTitle">Repair desk</h2></div><button class="x" id="close">✕</button></div><div id="modalBody"></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="game.js"></script>
+</body></html>
